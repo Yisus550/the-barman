@@ -14,6 +14,8 @@
   @if $value == large {
     @return min(3rem, 8vw);
   }
+
+  @return 0;
 }
 
 @function padding($value) {
@@ -36,4 +38,6 @@
   @if $value == largest {
     @return min(3rem, 8vh) $safe-zone;
   }
+
+  @return 0;
 }
