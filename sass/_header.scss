@@ -16,6 +16,10 @@
   @include shadow();
 }
 
+.nav-dark {
+  background-color: $background-dark;
+}
+
 .nav-container {
   width: 100%;
   display: flex;
