@@ -35,11 +35,34 @@
   background-color: $background-dark;
   border-radius: 12px;
   padding: 1rem 1rem 0 1rem;
+  position: relative;
 
   img {
     width: 100%;
     aspect-ratio: 1/1;
     border-radius: 24px;
+  }
+  
+  .close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: $color-one;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &:hover {
+      background-color: darken($color-one, 10%);
+    }
   }
 }
 
