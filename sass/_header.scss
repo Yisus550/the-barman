@@ -1,0 +1,60 @@
+.header {
+  width: 100%;
+  background-image: url("../img/bg-img.jpeg");
+  background-size: cover;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding: padding(large);
+  backdrop-filter: blur(10px);
+  @include shadow();
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: "Rye", cursive;
+  color: $secondary-color;
+}
+
+.call-action-section {
+  width: 100%;
+  display: grid;
+  place-content: start;
+  padding: padding(largest);
+}
+
+.call-action {
+  width: clamp(285px, 50vw, 575px);
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: padding(small);
+  gap: gap(smallest);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  @include shadow();
+}
+
+.cta-button {
+  width: 100%;
+  display: grid;
+  place-content: end;
+}
+
+@media (max-width: 860px) {
+  .header {
+    background-position-x: center;
+  }
+}

@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Benne&family=Rye&display=swap");
+
+@import "./mixins";
+@import "./functions";
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Benne", sans-serif;
+  font-size: 1rem;
+  color: $text-color;
+  text-decoration: none;
+  line-height: 1.5rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  // outline: red 1px solid;
+}
+
+body {
+  width: 100vw;
+  display: grid;
+  background-color: $background-light;
+}
+
+main {
+  width: 100vw;
+  display: grid;
+  place-content: start;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rye", cursive;
+  line-height: clamp(2rem, 5vw, 3.5rem);
+  color: $text-color;
+  -webkit-text-stroke: 1px $secondary-color;
+}
+
+h1 {
+  font-size: max(1.5rem, calc(2.5vw + 1rem));
+}
+
+h2 {
+  font-size: max(1rem, calc(2vw + 1rem));
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: max(1rem, calc(1vw + 1rem));
+}
+
+input {
+  width: 100%;
+  height: 2.25rem;
+  padding: min(0.5rem, 3%) min(1.5rem, 5%);
+  border-radius: 8px;
+  background-color: white;
+  border: 0;
+
+  &:hover,
+  &:focus {
+    border: 3px solid $primary-color;
+  }
+}
+
+.label-form {
+  font-size: 1.5rem;
+}
+
+footer {
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  padding: padding(largest);
+  background-color: $background-dark;
+
+  p {
+    font-size: min(4vw, 1.5rem);
+    color: $color-one;
+    text-align: center;
+  }
+}
+
+@import "./buttons";
+@import "./header";
+@import "./search-recipe";
+@import "./results-section";

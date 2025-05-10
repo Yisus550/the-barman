@@ -1,0 +1,46 @@
+.search-section {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: padding(largest);
+  gap: gap(smallest);
+  background-color: $background-dark;
+}
+
+.search-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: gap(smallest);
+}
+
+.content-align-end {
+  align-items: end;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: gap(medium);
+}
+
+.recipe-form {
+  width: min(85vw, 348px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  padding: paddig(medium);
+  gap: gap(small);
+  background-color: $background-light;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  @include shadow();
+}
+
+.form-group {
+  width: 100%;
+  gap: min(0.5rem, 3%);
+}

@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Benne&family=Rye&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Benne", sans-serif;
+  font-size: 1rem;
+  color: #261911;
+  text-decoration: none;
+  line-height: 1.5rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+body {
+  width: 100vw;
+  display: grid;
+  background-color: #f2c46d;
+}
+
+main {
+  width: 100vw;
+  display: grid;
+  place-content: start;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rye", cursive;
+  line-height: clamp(2rem, 5vw, 3.5rem);
+  color: #261911;
+  -webkit-text-stroke: 1px #f2e088;
+}
+
+h1 {
+  font-size: max(1.5rem, 2.5vw + 1rem);
+}
+
+h2 {
+  font-size: max(1rem, 2vw + 1rem);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: max(1rem, 1vw + 1rem);
+}
+
+input {
+  width: 100%;
+  height: 2.25rem;
+  padding: min(0.5rem, 3%) min(1.5rem, 5%);
+  border-radius: 8px;
+  background-color: white;
+  border: 0;
+}
+input:hover, input:focus {
+  border: 3px solid #f2921d;
+}
+
+.label-form {
+  font-size: 1.5rem;
+}
+
+footer {
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  padding: min(3rem, 8vh) min(11.5rem, 8%);
+  background-color: #8c5626;
+}
+footer p {
+  font-size: min(4vw, 1.5rem);
+  color: #d9b596;
+  text-align: center;
+}
+
+.btn-primary {
+  width: auto;
+  height: auto;
+  padding: 0 1.5rem;
+  background-color: #f2921d;
+  border: 3px solid #f2e088;
+  border-radius: 12px;
+}
+
+.header {
+  width: 100%;
+  background-image: url("../img/bg-img.jpeg");
+  background-size: cover;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding: min(3rem, 1.75vh) min(11.5rem, 8%);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: rgba(50, 50, 93, 0.2509803922) 0 6px 12px -2px, rgba(0, 0, 0, 0.3019607843) 0 3px 7px -3px;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: "Rye", cursive;
+  color: #f2e088;
+}
+
+.call-action-section {
+  width: 100%;
+  display: grid;
+  place-content: start;
+  padding: min(3rem, 8vh) min(11.5rem, 8%);
+}
+
+.call-action {
+  width: clamp(285px, 50vw, 575px);
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: min(1rem, 3.5vh) min(1.5rem, 7vw);
+  gap: min(1rem, 3vw);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  box-shadow: rgba(50, 50, 93, 0.2509803922) 0 6px 12px -2px, rgba(0, 0, 0, 0.3019607843) 0 3px 7px -3px;
+}
+
+.cta-button {
+  width: 100%;
+  display: grid;
+  place-content: end;
+}
+
+@media (max-width: 860px) {
+  .header {
+    background-position-x: center;
+  }
+}
+.search-section {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: min(3rem, 8vh) min(11.5rem, 8%);
+  gap: min(1rem, 3vw);
+  background-color: #8c5626;
+}
+
+.search-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: min(1rem, 3vw);
+}
+
+.content-align-end {
+  align-items: end;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: min(2rem, 6.5vw);
+}
+
+.recipe-form {
+  width: min(85vw, 348px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  padding: paddig(medium);
+  gap: min(1.5rem, 5vw);
+  background-color: #f2c46d;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: rgba(50, 50, 93, 0.2509803922) 0 6px 12px -2px, rgba(0, 0, 0, 0.3019607843) 0 3px 7px -3px;
+}
+
+.form-group {
+  width: 100%;
+  gap: min(0.5rem, 3%);
+}
+
+.results {
+  width: 100vw;
+  display: grid;
+  place-content: start;
+  padding: min(3rem, 8vh) min(11.5rem, 8%);
+  gap: min(2rem, 6.5vw);
+}
+
+.results-container {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: min(2rem, 6.5vw);
+}
+
+.recipe-card {
+  width: min(85vw, 364px);
+  display: grid;
+  place-content: center;
+  gap: min(1.5rem, 5vw);
+  padding: min(1.5rem, 3.5vh) min(2rem, 7vw);
+  background-color: #8c5626;
+  border-radius: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.2509803922) 0 6px 12px -2px, rgba(0, 0, 0, 0.3019607843) 0 3px 7px -3px;
+}
+.recipe-card button {
+  width: min(71vw, 300px);
+  padding: min(0.5rem, 2vh) min(1.5rem, 3.5vw);
+  background-color: #f2921d;
+  border: 3px solid #f2e088;
+  border-radius: 12px;
+}
+
+.recipe-card-image {
+  width: min(71vw, 300px);
+  height: min(71vw, 300px);
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+}
+.recipe-card-image img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.recipe-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: min(1.5rem, 5vw);
+}
+
+@media (max-width: 1377px) {
+  .results-container {
+    justify-content: center;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,39 @@
+@function gap($value) {
+  @if $value == smallest {
+    @return min(1rem, 3vw);
+  }
+
+  @if $value == small {
+    @return min(1.5rem, 5vw);
+  }
+
+  @if $value == medium {
+    @return min(2rem, 6.5vw);
+  }
+
+  @if $value == large {
+    @return min(3rem, 8vw);
+  }
+}
+
+@function padding($value) {
+  @if $value == smallest {
+    @return min(0.5rem, 2vh) min(1.5rem, 3.5vw);
+  }
+
+  @if $value == small {
+    @return min(1rem, 3.5vh) min(1.5rem, 7vw);
+  }
+
+  @if $value == medium {
+    @return min(1.5rem, 3.5vh) min(2rem, 7vw);
+  }
+
+  @if $value == large {
+    @return min(3rem, 1.75vh) $safe-zone;
+  }
+
+  @if $value == largest {
+    @return min(3rem, 8vh) $safe-zone;
+  }
+}
