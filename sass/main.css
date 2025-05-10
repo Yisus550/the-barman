@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Benne&family=Rye&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -53,7 +52,7 @@ h6 {
   font-size: max(1rem, 1vw + 1rem);
 }
 
-input {
+input, select {
   width: 100%;
   height: 2.25rem;
   padding: min(0.5rem, 3%) min(1.5rem, 5%);
@@ -61,7 +60,7 @@ input {
   background-color: white;
   border: 0;
 }
-input:hover, input:focus {
+input:hover, input:focus, select:hover, select:focus {
   border: 3px solid #f2921d;
 }
 
@@ -80,6 +79,10 @@ footer p {
   font-size: min(4vw, 1.5rem);
   color: #d9b596;
   text-align: center;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .btn-primary {
@@ -203,6 +206,7 @@ footer p {
 
 .results {
   width: 100vw;
+  min-height: 70vh;
   display: grid;
   place-content: start;
   padding: min(3rem, 8vh) min(11.5rem, 8%);
@@ -221,8 +225,8 @@ footer p {
 
 .recipe-card {
   width: min(85vw, 364px);
+  min-height: 554px;
   display: grid;
-  place-content: center;
   gap: min(1.5rem, 5vw);
   padding: min(1.5rem, 3.5vh) min(2rem, 7vw);
   background-color: #8c5626;
@@ -235,6 +239,7 @@ footer p {
   background-color: #f2921d;
   border: 3px solid #f2e088;
   border-radius: 12px;
+  align-self: end;
 }
 
 .recipe-card-image {
@@ -250,15 +255,100 @@ footer p {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.recipe-card-image h3 {
+  font-size: max(1rem, 0.75vw + 1rem);
+}
 
 .recipe-card-content {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: min(1.5rem, 5vw);
+}
+
+.recipe-card-cta {
+  display: flex;
+  margin-top: auto;
+}
+
+.search-to-start {
+  font-size: x-large;
 }
 
 @media (max-width: 1377px) {
   .results-container {
     justify-content: center;
   }
+}
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-container {
+  width: min(85vw, 400px);
+  max-height: 90vh;
+  background-color: #f2c46d;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: min(1rem, 3.5vh);
+  overflow-y: auto;
+  box-sizing: border-box;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.modal-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+.modal-header {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  gap: min(1rem, 3vw);
+  background-color: #8c5626;
+  border-radius: 12px;
+  padding: 1rem 1rem 0 1rem;
+}
+.modal-header img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 24px;
+}
+
+.modal-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.modal-ingredients {
+  width: 100%;
+  display: grid;
+  place-content: start;
+  margin-top: 1rem;
+}
+
+.ingredients-list {
+  width: 100%;
+  display: grid;
+  place-content: start;
+  padding-left: min(1rem, 3.5vh);
+}
+
+.modal-instructions {
+  width: 100%;
+  display: grid;
+  place-content: start;
+  margin-top: 1rem;
 }/*# sourceMappingURL=main.css.map */
