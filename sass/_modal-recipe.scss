@@ -1,0 +1,74 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-container {
+  width: min(85vw, 400px);
+  max-height: 90vh;
+  background-color: $background-light;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: min(1rem, 3.5vh);
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.modal-header {
+  width: 100%;
+  display: grid;
+  place-content: center;
+  gap: gap(smallest);
+  background-color: $background-dark;
+  border-radius: 12px;
+  padding: 1rem 1rem 0 1rem;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 24px;
+  }
+}
+
+.modal-body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.modal-ingredients {
+  width: 100%;
+  display: grid;
+  place-content: start;
+  margin-top: 1rem;
+}
+
+.ingredients-list {
+  width: 100%;
+  display: grid;
+  place-content: start;
+  padding-left: min(1rem, 3.5vh);
+}
+
+.modal-instructions {
+  width: 100%;
+  display: grid;
+  place-content: start;
+  margin-top: 1rem;
+}

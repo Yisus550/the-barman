@@ -1,5 +1,6 @@
 .results {
   width: 100vw;
+  min-height: 70vh;
   display: grid;
   place-content: start;
   padding: padding(largest);
@@ -17,8 +18,8 @@
 
 .recipe-card {
   width: min(85vw, 364px);
+  min-height: 554px;
   display: grid;
-  place-content: center;
   gap: gap(small);
   padding: padding(medium);
   background-color: $background-dark;
@@ -31,6 +32,7 @@
     background-color: $primary-color;
     border: 3px solid $secondary-color;
     border-radius: 12px;
+    align-self: end;
   }
 }
 
@@ -46,12 +48,26 @@
     border-radius: 1rem;
     object-fit: cover;
   }
+
+  h3 {
+    font-size: max(1rem, calc(0.75vw + 1rem));
+  }
 }
 
 .recipe-card-content {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: gap(small);
+}
+
+.recipe-card-cta {
+  display: flex;
+  margin-top: auto;
+}
+
+.search-to-start {
+  font-size: x-large;
 }
 
 @media (max-width: 1377px) {
