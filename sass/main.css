@@ -85,7 +85,7 @@ footer p {
   display: none !important;
 }
 
-.btn-primary {
+.btn-primary, .btn-secondary {
   width: auto;
   height: auto;
   padding: 0 1.5rem;
@@ -111,6 +111,10 @@ footer p {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   box-shadow: rgba(50, 50, 93, 0.2509803922) 0 6px 12px -2px, rgba(0, 0, 0, 0.3019607843) 0 3px 7px -3px;
+}
+
+.nav-dark {
+  background-color: #8c5626;
 }
 
 .nav-container {
@@ -316,11 +320,32 @@ footer p {
   background-color: #8c5626;
   border-radius: 12px;
   padding: 1rem 1rem 0 1rem;
+  position: relative;
 }
 .modal-header img {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 24px;
+}
+.modal-header .close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #d9b596;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-header .close-modal-btn:hover {
+  background-color: #cb9b71;
 }
 
 .modal-body {
@@ -351,4 +376,86 @@ footer p {
   display: grid;
   place-content: start;
   margin-top: 1rem;
+}
+
+.favorites-section {
+  width: 100%;
+  padding: 0;
+  display: grid;
+  place-content: center;
+  gap: 1.5rem;
+}
+.favorites-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.favorites-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0;
+}
+
+.no-favorites {
+  width: 100%;
+  padding: 3rem;
+  text-align: center;
+  grid-column: 1/-1;
+}
+.no-favorites p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.recipe-card .recipe-card-image {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+.recipe-card .recipe-card-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe-card .recipe-card-image h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: rgba(140, 86, 38, 0.8);
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+}
+.recipe-card .recipe-card-content {
+  padding: 1.5rem;
+}
+.recipe-card .recipe-card-content .recipe-card-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-secondary {
+  background-color: #d9b596;
+  border: 2px solid #d9b596;
+}
+.btn-secondary:hover {
+  background-color: transparent;
+  color: #d9b596;
 }/*# sourceMappingURL=main.css.map */
