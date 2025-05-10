@@ -49,10 +49,33 @@ document.addEventListener("DOMContentLoaded", () => {
 // Add a global event listener for drink recipes
 document.addEventListener("DOMContentLoaded", () => {
   const drinkList = document.getElementById("drinkList");
-
   drinkList.addEventListener("click", (e) => {
+    const recipeCard = e.target.closest(".recipe-card");
+    if (!recipeCard) return;
+    
+    const idDrink = recipeCard.id;
+    
     if (e.target.classList.contains("view-recipe-btn")) {
-      const idDrink = e.target.closest(".recipe-card").id;
+      displayRecipeModal(idDrink);
+    } else if (e.target.classList.contains("add-favorite-btn")) {
+      addToFavorites(idDrink);
+    }
+    
+    function addToFavorites(idDrink) {
+      // Get existing favorites from localStorage or initialize empty array
+      const favorites = JSON.parse(localStorage.getItem("cocktailFavorites")) || [];
+      
+      // Check if this drink is already a favorite
+      if (!favorites.includes(idDrink)) {
+        favorites.push(idDrink);
+        localStorage.setItem("cocktailFavorites", JSON.stringify(favorites));
+        alert("¡Cóctel guardado en favoritos!");
+      } else {
+        alert("Este cóctel ya está en tus favoritos");
+      }
+    }
+    
+    function displayRecipeModal(idDrink) {
 
       fetch(`${apiURL}/lookup.php?i=${idDrink}`)
         .then((res) => {
@@ -79,15 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
               ingredients += `<li>${ingredient}</li>`;
             }
           }
-          ingredients = ingredients.replace(/undefined/g, "");
-
-          recipeModal.innerHTML = `
+          ingredients = ingredients.replace(/undefined/g, "");          recipeModal.innerHTML = `
             <div class="modal-header">
                 <img
                 src="${drink.strDrinkThumb}/medium"
                 alt="${drink.strDrink}"
                 />
                 <h3>${drink.strDrink}</h3>
+                <button class="close-modal-btn">&times;</button>
             </div>
 
             <div class="modal-body">
@@ -107,8 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     : ""
                 }
             </div>
-          `;
-          recipeModal.classList.remove("hidden");
+          `;          recipeModal.classList.remove("hidden");
           modal.classList.remove("hidden");
           document.body.style.overflow = "hidden";
         });
@@ -147,9 +168,9 @@ submitBtn.addEventListener("click", (e) => {
               />
               <h3>${drink.strDrink}</h3>
             </div>
-            <div class="recipe-card-content">
-              <div class="recipe-card-cta">
+            <div class="recipe-card-content">                <div class="recipe-card-cta">
                 <button class="btn-primary view-recipe-btn">Ver Receta</button>
+                <button class="btn-secondary add-favorite-btn">Guardar</button>
               </div>
             </div>
       `;
@@ -163,6 +184,14 @@ submitBtn.addEventListener("click", (e) => {
 
 modal.addEventListener("click", (e) => {
   if (e.target.classList.contains("modal")) {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "auto";
+  }
+});
+
+// Event delegation for the close button inside modal
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("close-modal-btn")) {
     modal.classList.add("hidden");
     document.body.style.overflow = "auto";
   }
