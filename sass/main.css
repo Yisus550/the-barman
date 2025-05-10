@@ -380,6 +380,7 @@ footer p {
 
 .favorites-section {
   width: 100%;
+  min-height: max(300px, 76dvh);
   padding: 0;
   display: grid;
   place-content: center;

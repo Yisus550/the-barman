@@ -1,5 +1,6 @@
 .favorites-section {
   width: 100%;
+  min-height: max(300px, 76dvh);
   padding: padding(regular);
   display: grid;
   place-content: center;
