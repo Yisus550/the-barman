@@ -83,31 +83,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
           recipeModal.innerHTML = `
             <div class="modal-header">
-                <img
-                src="${drink.strDrinkThumb}/medium"
-                alt="${drink.strDrink}"
-                />
-                <h3>${drink.strDrink}</h3>
+              <img
+              src="${drink.strDrinkThumb}/medium"
+              alt="${drink.strDrink}"
+              />
+              <h3>${drink.strDrink}</h3>
             </div>
 
             <div class="modal-body">
-                <div class="modal-ingredients">
-                <h4>Ingredientes</h4>
-                <ul class="ingredients-list">
-                    ${ingredients}
-                </ul>
-                </div>
+              <div class="modal-ingredients">
+              <h4>Ingredientes</h4>
+              <ul class="ingredients-list">
+                  ${ingredients}
+              </ul>
+            </div>
 
-                ${
-                  instructions
-                    ? `<div class="modal-instructions">
-                        <h4>Instrucciones</h4>
-                        <p>${instructions}</p>
-                      </div>`
-                    : ""
-                }
+              ${
+                instructions
+                  ? `<div class="modal-instructions">
+                      <h4>Instrucciones</h4>
+                      <p>${instructions}</p>
+                    </div>`
+                  : ""
+              }
+
+              <button class="btn-primary save-recipe">Guardar receta</button>
             </div>
           `;
+
+          document
+            .querySelector(".save-recipe")
+            .addEventListener("click", () => {
+              const savedRecipes =
+                JSON.parse(localStorage.getItem("savedRecipes")) || [];
+
+              if (savedRecipes.some((recipe) => recipe.id === drink.idDrink)) {
+                alert("Esta receta ya está guardada.");
+                return;
+              }
+
+              const recipeToSave = {
+                id: drink.idDrink,
+                name: drink.strDrink,
+                image: drink.strDrinkThumb,
+                category: drink.strCategory,
+                ingredient: drink.str,
+                instructions: drink.strInstructionsES ?? drink.strInstructions,
+              };
+
+              savedRecipes.push(recipeToSave);
+              localStorage.setItem(
+                "savedRecipes",
+                JSON.stringify(savedRecipes)
+              );
+              alert("Receta guardada!");
+            });
+
           recipeModal.classList.remove("hidden");
           modal.classList.remove("hidden");
           document.body.style.overflow = "hidden";
