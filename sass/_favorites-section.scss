@@ -13,19 +13,12 @@
 }
 
 .favorites-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: padding(regular);
-  
-//   @include responsive(tablet) {
-//     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-//   }
-  
-//   @include responsive(mobile) {
-//     grid-template-columns: 1fr;
-//   }
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: gap(medium);
 }
 
 .no-favorites {
