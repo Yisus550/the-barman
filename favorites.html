@@ -1,44 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./sass/main.css" />
 
+    <script src="./js/favorites.js" defer></script>
+
     <title>Favoritos</title>
   </head>
-  <body>
-    <nav class="navbar">
-      <div class="nav-container">
-        <h1>The Barman</h1>
-        <a href="./index.html" class="nav-link">Inicio</a>
+  <body class="layout">
+    <header class="favorites_header">
+      <nav class="navbar nav-dark">
+        <div class="nav-container">
+          <div class="logo-container"></div>
+          <h1 class="nav-title">The Barman</h1>
+          <a href="./index.html" class="nav-link">Inicio</a>
+        </div>
+      </nav>
+
+      <div class="favorites_title">
+        <img src="./img/martini-cup-secondary.png" alt="">
+        <h3>Favoritos</h3>
       </div>
-    </nav>
+    </header>
 
     <main>
-      <div class="call-action-section">
-        <article class="call-action">
-          <h2>Favoritos</h2>
-          <p>Descubre tus recetas de cócteles favoritos.</p>
-        </article>
-      </div>
-
       <section class="favorites-section">
-        <h2>Mis Favoritos</h2>
-        <div class="favorites-container">
-          <article class="recipe-card">
-            <div class="recipe-card-image">
-              <img src="path/to/image.jpg" alt="Cocktail Name" />
-            </div>
-
-            <div class="recipe-card-content">
-              <h3>Cocktail Name</h3>
-              <p>Descripción del cóctel.</p>
-              <button class="btn-primary">Ver Receta</button>
-            </div>
-          </article>
+        <div class="favorites-container" id="favorites-container">
         </div>
       </section>
+
+      <div class="modal hidden">
+        <div class="modal-container" id="recipe-modal">
+        </div>
+      </div>
     </main>
 
     <footer class="footer-section">
