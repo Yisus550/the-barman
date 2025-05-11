@@ -16,6 +16,10 @@
   @include shadow();
 }
 
+.nav-dark {
+  background-color: $background-dark;
+}
+
 .nav-container {
   width: 100%;
   display: flex;
@@ -23,9 +27,17 @@
   align-items: center;
 }
 
+.nav-title {
+  margin: 0 auto;
+}
+
 .nav-link {
   font-family: "Rye", cursive;
   color: $secondary-color;
+}
+
+.nav-dark {
+  background-color: $text-color;
 }
 
 .call-action-section {

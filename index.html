@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="./sass/main.css" />
+
+    <script src="./js/index.js" defer></script>
     <title>Inicio</title>
   </head>
   <body>
@@ -11,7 +14,7 @@
       <nav class="navbar">
         <div class="nav-container">
           <h1>The Barman</h1>
-          <a href="#" class="nav-link">Favoritos</a>
+          <a href="./favorites.html" class="nav-link">Favoritos</a>
         </div>
       </nav>
       <div class="call-action-section">
@@ -36,106 +39,46 @@
           <div class="form-container">
             <h2>Búsqueda</h2>
 
-            <form class="recipe-form">
+            <form class="recipe-form" method="get">
               <div class="form-group">
                 <label for="ingredient" class="form-label">Ingrediente</label>
-                <input type="text" name="ingredient" id="ingredient" />
+                <select name="ingredient" id="ingredient">
+                  <option value="">-- Selecciona una opción --</option>
+                </select>
               </div>
 
               <div class="form-group">
                 <label for="category" class="form-label">Categoría</label>
-                <input type="text" name="category" id="category" />
+                <select name="category" id="category">
+                  <option value="">-- Selecciona una opción --</option>
+                </select>
               </div>
 
-              <input type="submit" value="Buscar" class="btn-primary" />
+              <input
+                type="submit"
+                id="submit-btn"
+                value="Buscar"
+                class="btn-primary"
+              />
             </form>
           </div>
         </div>
       </section>
 
+      <div class="modal hidden">
+        <div class="modal-container" id="recipe-modal"></div>
+      </div>
+
       <section class="results">
         <h2>Resultados</h2>
-        <div class="results-container">
-          <article class="recipe-card">
-            <div class="recipe-card-image">
-              <img
-                src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-                alt="Margarita"
-              />
-            </div>
-            <div class="recipe-card-content">
-              <h3>Margarita</h3>
-              <div class="recipe-card-cta">
-                <button class="btn-primary">Ver Receta</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="recipe-card">
-            <div class="recipe-card-image">
-              <img
-                src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-                alt="Margarita"
-              />
-            </div>
-            <div class="recipe-card-content">
-              <h3>Margarita</h3>
-              <div class="recipe-card-cta">
-                <button class="btn-primary">Ver Receta</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="recipe-card">
-            <div class="recipe-card-image">
-              <img
-                src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-                alt="Margarita"
-              />
-            </div>
-            <div class="recipe-card-content">
-              <h3>Margarita</h3>
-              <div class="recipe-card-cta">
-                <button class="btn-primary">Ver Receta</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="recipe-card">
-            <div class="recipe-card-image">
-              <img
-                src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-                alt="Margarita"
-              />
-            </div>
-            <div class="recipe-card-content">
-              <h3>Margarita</h3>
-              <div class="recipe-card-cta">
-                <button class="btn-primary">Ver Receta</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="recipe-card">
-            <div class="recipe-card-image">
-              <img
-                src="https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
-                alt="Margarita"
-              />
-            </div>
-            <div class="recipe-card-content">
-              <h3>Margarita</h3>
-              <div class="recipe-card-cta">
-                <button class="btn-primary">Ver Receta</button>
-              </div>
-            </div>
-          </article>
+        <div class="results-container" id="drinkList">
+          <p class="search-to-start">Busca una receta para iniciar.</p>
         </div>
       </section>
     </main>
-    
+
     <footer>
-      <p>Aviso Legal. Politica de privacidad. Politica de cookies.</p>
+      <p>Aviso Legal. Política de privacidad. Política de cookies.</p>
       <p>Contacto. 2025 thebarman.com</p>
     </footer>
   </body>
