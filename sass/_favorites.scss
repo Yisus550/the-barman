@@ -1,0 +1,31 @@
+.favorites_header {
+  width: 100vw;
+  height: clamp(200px, 25vh, 400px);
+  display: grid;
+  grid:
+    "nav" auto
+    "title" 1fr
+    / 1fr;
+  background-color: $background-dark;
+}
+
+.favorites_title {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: padding(large);
+
+  img {
+    width: 5%;
+    aspect-ratio: 1/1;
+  }
+}
+
+.favorites-section {
+  width: 100vw;
+  min-height: 60vh;
+  display: grid;
+  place-content: center;
+  padding: padding(large);
+}

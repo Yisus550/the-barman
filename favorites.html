@@ -9,18 +9,25 @@
 
     <title>Favoritos</title>
   </head>
-  <body>
-    <nav class="navbar nav-dark">
-      <div class="nav-container">
-        <h1>The Barman</h1>
-        <a href="./index.html" class="nav-link">Inicio</a>
+  <body class="layout">
+    <header class="favorites_header">
+      <nav class="navbar nav-dark">
+        <div class="nav-container">
+          <div class="logo-container"></div>
+          <h1 class="nav-title">The Barman</h1>
+          <a href="./index.html" class="nav-link">Inicio</a>
+        </div>
+      </nav>
+
+      <div class="favorites_title">
+        <img src="./img/martini-cup-secondary.png" alt="">
+        <h3>Favoritos</h3>
       </div>
-    </nav>
+    </header>
 
     <main>
       <section class="favorites-section">
-        <h2>Mis Favoritos</h2>
-        <div class="favorites-container">
+        <div class="favorites-container" id="favorites-container">
           <!-- Favorites will be loaded dynamically from JavaScript -->
         </div>
       </section>
