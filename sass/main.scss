@@ -58,7 +58,8 @@ h6 {
   font-size: max(1rem, calc(1vw + 1rem));
 }
 
-input, select {
+input,
+select {
   width: 100%;
   height: 2.25rem;
   padding: min(0.5rem, 3%) min(1.5rem, 5%);
@@ -78,6 +79,7 @@ input, select {
 
 footer {
   width: 100vw;
+  height: min(100%, 15vh);
   display: grid;
   place-content: center;
   padding: padding(largest);
@@ -99,3 +101,4 @@ footer {
 @import "./search-recipe";
 @import "./results-section";
 @import "./_modal-recipe";
+@import "./favorites";
